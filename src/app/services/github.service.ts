@@ -12,12 +12,11 @@ export class GithubService {
 
   constructor(private _http: Http) {
     console.log('GH Service Ready...');
-    console.log(this.client_id)
     this.username = 'SiamKing';
   }
 
   getUser() {
-    return this._http.get('http://api.github.com/users/' + this.username + '?client_id=' + this.client_id + '&client_secret=' + this.client_secret)
+    return this._http.get('https://api.github.com/users/' + this.username + '?client_id=' + this.client_id + '&client_secret=' + this.client_secret)
       .map(res => res.json());
   }
 }
